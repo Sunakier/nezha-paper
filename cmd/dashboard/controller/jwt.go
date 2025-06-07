@@ -10,10 +10,10 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 
-	"github.com/nezhahq/nezha/cmd/dashboard/controller/waf"
-	"github.com/nezhahq/nezha/model"
-	"github.com/nezhahq/nezha/pkg/utils"
-	"github.com/nezhahq/nezha/service/singleton"
+	"github.com/Sunakier/nezha-paper/cmd/dashboard/controller/waf"
+	"github.com/Sunakier/nezha-paper/model"
+	"github.com/Sunakier/nezha-paper/pkg/utils"
+	"github.com/Sunakier/nezha-paper/service/singleton"
 )
 
 func initParams() *jwt.GinJWTMiddleware {

@@ -11,9 +11,9 @@ import (
 	"github.com/jinzhu/copier"
 	"gorm.io/gorm"
 
-	"github.com/nezhahq/nezha/model"
-	pb "github.com/nezhahq/nezha/proto"
-	"github.com/nezhahq/nezha/service/singleton"
+	"github.com/Sunakier/nezha-paper/model"
+	pb "github.com/Sunakier/nezha-paper/proto"
+	"github.com/Sunakier/nezha-paper/service/singleton"
 )
 
 // List server

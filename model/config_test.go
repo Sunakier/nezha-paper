@@ -21,8 +21,8 @@ func TestReadConfig(t *testing.T) {
 			Cond  bool
 		}{
 			{"jwt_secret_key", c.JWTSecretKey, c.JWTSecretKey != ""},
-			{"user_template", c.UserTemplate, c.UserTemplate == "user-dist"},
-			{"admin_template", c.AdminTemplate, c.AdminTemplate == "admin-dist"},
+			{"user_template", c.UserTemplate, c.UserTemplate == "nezha-dash-paper-dist"},
+			{"admin_template", c.AdminTemplate, c.AdminTemplate == "admin-frontend-paper-dist"},
 			{"agent_secret_key", c.AgentSecretKey, c.AgentSecretKey != ""},
 		}
 

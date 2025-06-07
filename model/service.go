@@ -8,7 +8,7 @@ import (
 	"github.com/robfig/cron/v3"
 	"gorm.io/gorm"
 
-	pb "github.com/nezhahq/nezha/proto"
+	pb "github.com/Sunakier/nezha-paper/proto"
 )
 
 const (

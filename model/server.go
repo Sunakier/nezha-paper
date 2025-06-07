@@ -8,7 +8,7 @@ import (
 	"github.com/goccy/go-json"
 	"gorm.io/gorm"
 
-	pb "github.com/nezhahq/nezha/proto"
+	pb "github.com/Sunakier/nezha-paper/proto"
 )
 
 type Server struct {

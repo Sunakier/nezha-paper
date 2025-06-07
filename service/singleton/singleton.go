@@ -15,8 +15,8 @@ import (
 	"gorm.io/gorm"
 	"sigs.k8s.io/yaml"
 
-	"github.com/nezhahq/nezha/model"
-	"github.com/nezhahq/nezha/pkg/utils"
+	"github.com/Sunakier/nezha-paper/model"
+	"github.com/Sunakier/nezha-paper/pkg/utils"
 )
 
 var Version = "debug"

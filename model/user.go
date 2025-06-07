@@ -3,8 +3,8 @@ package model
 import (
 	"time"
 
+	"github.com/Sunakier/nezha-paper/pkg/utils"
 	"github.com/gorilla/websocket"
-	"github.com/nezhahq/nezha/pkg/utils"
 	"gorm.io/gorm"
 )
 

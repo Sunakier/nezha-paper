@@ -7,7 +7,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/nezhahq/nezha/service/singleton"
+	"github.com/Sunakier/nezha-paper/service/singleton"
 )
 
 type ioStreamContext struct {

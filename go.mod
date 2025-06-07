@@ -1,4 +1,4 @@
-module github.com/nezhahq/nezha
+module github.com/Sunakier/nezha-paper
 
 go 1.24.0
 

@@ -8,8 +8,8 @@ import (
 	"github.com/jinzhu/copier"
 	"golang.org/x/net/idna"
 
-	"github.com/nezhahq/nezha/model"
-	"github.com/nezhahq/nezha/service/singleton"
+	"github.com/Sunakier/nezha-paper/model"
+	"github.com/Sunakier/nezha-paper/service/singleton"
 )
 
 // List DDNS Profiles

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Sunakier/nezha-paper/pkg/utils"
 	"github.com/gin-gonic/gin"
-	"github.com/nezhahq/nezha/pkg/utils"
 )
 
 const (

@@ -8,9 +8,9 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/Sunakier/nezha-paper/model"
+	"github.com/Sunakier/nezha-paper/pkg/utils"
 	"github.com/libdns/libdns"
-	"github.com/nezhahq/nezha/model"
-	"github.com/nezhahq/nezha/pkg/utils"
 )
 
 const (

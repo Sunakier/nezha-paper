@@ -10,8 +10,8 @@ import (
 	"github.com/libdns/libdns"
 	"github.com/miekg/dns"
 
-	"github.com/nezhahq/nezha/model"
-	"github.com/nezhahq/nezha/pkg/utils"
+	"github.com/Sunakier/nezha-paper/model"
+	"github.com/Sunakier/nezha-paper/pkg/utils"
 )
 
 type DNSServerKey struct{}

@@ -8,11 +8,11 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/hashicorp/go-uuid"
 
-	"github.com/nezhahq/nezha/model"
-	"github.com/nezhahq/nezha/pkg/websocketx"
-	"github.com/nezhahq/nezha/proto"
-	"github.com/nezhahq/nezha/service/rpc"
-	"github.com/nezhahq/nezha/service/singleton"
+	"github.com/Sunakier/nezha-paper/model"
+	"github.com/Sunakier/nezha-paper/pkg/websocketx"
+	"github.com/Sunakier/nezha-paper/proto"
+	"github.com/Sunakier/nezha-paper/service/rpc"
+	"github.com/Sunakier/nezha-paper/service/singleton"
 )
 
 // Create web ssh terminal

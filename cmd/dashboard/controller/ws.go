@@ -5,6 +5,7 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+	"strings"
 	"time"
 	"unicode/utf8"
 
@@ -14,9 +15,9 @@ import (
 	"github.com/hashicorp/go-uuid"
 	"golang.org/x/sync/singleflight"
 
-	"github.com/nezhahq/nezha/model"
-	"github.com/nezhahq/nezha/pkg/utils"
-	"github.com/nezhahq/nezha/service/singleton"
+	"github.com/Sunakier/nezha-paper/model"
+	"github.com/Sunakier/nezha-paper/pkg/utils"
+	"github.com/Sunakier/nezha-paper/service/singleton"
 )
 
 var upgrader *websocket.Upgrader
@@ -24,8 +25,35 @@ var upgrader *websocket.Upgrader
 func InitUpgrader() {
 	var checkOrigin func(r *http.Request) bool
 
-	// Allow CORS from loopback addresses in debug mode
-	if singleton.Conf.Debug {
+	// Check if we have allowed origins configured
+	if singleton.Conf.WSAllowOrigins != "" {
+		// Create a map of allowed origins for faster lookup
+		allowedOrigins := make(map[string]bool)
+		for _, origin := range strings.Split(singleton.Conf.WSAllowOrigins, ",") {
+			origin = strings.TrimSpace(origin)
+			if origin != "" {
+				allowedOrigins[origin] = true
+			}
+		}
+
+		checkOrigin = func(r *http.Request) bool {
+			// First check if it's same origin
+			if checkSameOrigin(r) {
+				return true
+			}
+
+			// Check if origin is in the allowed list
+			origin := r.Header.Get("Origin")
+			if origin != "" {
+				u, err := url.Parse(origin)
+				if err == nil {
+					return allowedOrigins[u.Host] || allowedOrigins[origin]
+				}
+			}
+			return false
+		}
+	} else if singleton.Conf.Debug {
+		// Allow CORS from loopback addresses in debug mode
 		checkOrigin = func(r *http.Request) bool {
 			if checkSameOrigin(r) {
 				return true

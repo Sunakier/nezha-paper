@@ -8,7 +8,7 @@ import (
 
 	"github.com/jinzhu/copier"
 
-	"github.com/nezhahq/nezha/model"
+	"github.com/Sunakier/nezha-paper/model"
 )
 
 const (

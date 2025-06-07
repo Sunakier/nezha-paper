@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Sunakier/nezha-paper/pkg/utils"
 	"github.com/goccy/go-json"
-	"github.com/nezhahq/nezha/pkg/utils"
 )
 
 const (

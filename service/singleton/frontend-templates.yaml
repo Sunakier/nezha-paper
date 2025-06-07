@@ -1,3 +1,16 @@
+- path: "admin-frontend-paper-dist"
+  name: "admin-frontend-paper"
+  repository: "https://github.com/Sunakier/admin-frontend-paper"
+  author: "Sunakier"
+  version: "v1.0.0-paper"
+  is_admin: true
+  is_official: false
+- path: "nezha-dash-paper-dist"
+  name: "nezha-dash-paper"
+  repository: "https://github.com/Sunakier/nezha-dash-paper"
+  author: "Sunakier"
+  version: "v1.0.0-paper"
+  is_official: false
 - path: "admin-dist"
   name: "OfficialAdmin"
   repository: "https://github.com/nezhahq/admin-frontend"

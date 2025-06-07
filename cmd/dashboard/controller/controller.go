@@ -19,11 +19,11 @@ import (
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
-	"github.com/nezhahq/nezha/cmd/dashboard/controller/waf"
-	docs "github.com/nezhahq/nezha/cmd/dashboard/docs"
-	"github.com/nezhahq/nezha/model"
-	"github.com/nezhahq/nezha/pkg/utils"
-	"github.com/nezhahq/nezha/service/singleton"
+	"github.com/Sunakier/nezha-paper/cmd/dashboard/controller/waf"
+	docs "github.com/Sunakier/nezha-paper/cmd/dashboard/docs"
+	"github.com/Sunakier/nezha-paper/model"
+	"github.com/Sunakier/nezha-paper/pkg/utils"
+	"github.com/Sunakier/nezha-paper/service/singleton"
 )
 
 func ServeWeb(frontendDist fs.FS) http.Handler {
@@ -42,6 +42,7 @@ func ServeWeb(frontendDist fs.FS) http.Handler {
 	r.Use(waf.RealIp)
 	r.Use(waf.Waf)
 	r.Use(recordPath)
+	r.Use(corsMiddleware())
 
 	routers(r, frontendDist)
 

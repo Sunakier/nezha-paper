@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/nezhahq/nezha/model"
+	"github.com/Sunakier/nezha-paper/model"
 )
 
 var (

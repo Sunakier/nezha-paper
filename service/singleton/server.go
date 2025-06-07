@@ -7,9 +7,9 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/nezhahq/nezha/model"
-	"github.com/nezhahq/nezha/pkg/ddns"
-	"github.com/nezhahq/nezha/pkg/utils"
+	"github.com/Sunakier/nezha-paper/model"
+	"github.com/Sunakier/nezha-paper/pkg/ddns"
+	"github.com/Sunakier/nezha-paper/pkg/utils"
 )
 
 type ServerClass struct {
