@@ -37,6 +37,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+<<<<<<< HEAD
 
       - name: Checkout latest tag if manually triggered
         if: github.event_name == 'workflow_dispatch'
@@ -44,6 +45,8 @@ jobs:
           latest_tag=$(git describe --tags $(git rev-list --tags --max-count=1))
           echo "Latest tag: $latest_tag"
           git checkout $latest_tag
+=======
+>>>>>>> 61efd39 (feat: 更新checkout步骤以获取完整的历史和标签)
 
       - name: Prepare frontends' dists
         run: |
@@ -143,6 +146,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+<<<<<<< HEAD
 
       - name: Checkout latest tag if manually triggered
         if: github.event_name == 'workflow_dispatch'
@@ -150,6 +154,8 @@ jobs:
           latest_tag=$(git describe --tags $(git rev-list --tags --max-count=1))
           echo "Latest tag: $latest_tag"
           git checkout $latest_tag
+=======
+>>>>>>> 61efd39 (feat: 更新checkout步骤以获取完整的历史和标签)
 
       - name: Download artifacts
         uses: actions/download-artifact@v4
