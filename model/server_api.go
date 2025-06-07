@@ -29,6 +29,7 @@ type ServerForm struct {
 	EnableDDNS          bool                `json:"enable_ddns,omitempty" validate:"optional"`    // 启用DDNS
 	DDNSProfiles        []uint64            `json:"ddns_profiles,omitempty" validate:"optional"`  // DDNS配置
 	OverrideDDNSDomains map[uint64][]string `json:"override_ddns_domains,omitempty" validate:"optional"`
+	ForceCountryCode    string              `json:"force_country_code,omitempty" validate:"optional"` // 强制指定国家码
 }
 
 type ServerConfigForm struct {

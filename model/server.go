@@ -23,6 +23,7 @@ type Server struct {
 	EnableDDNS             bool   `json:"enable_ddns,omitempty"`    // 启用DDNS
 	DDNSProfilesRaw        string `gorm:"default:'[]';column:ddns_profiles_raw" json:"-"`
 	OverrideDDNSDomainsRaw string `gorm:"default:'{}';column:override_ddns_domains_raw" json:"-"`
+	ForceCountryCode       string `json:"force_country_code,omitempty"` // 强制指定国家码
 
 	DDNSProfiles        []uint64            `gorm:"-" json:"ddns_profiles,omitempty" validate:"optional"` // DDNS配置
 	OverrideDDNSDomains map[uint64][]string `gorm:"-" json:"override_ddns_domains,omitempty" validate:"optional"`

@@ -80,6 +80,7 @@ func updateServer(c *gin.Context) (any, error) {
 	s.EnableDDNS = sf.EnableDDNS
 	s.DDNSProfiles = sf.DDNSProfiles
 	s.OverrideDDNSDomains = sf.OverrideDDNSDomains
+	s.ForceCountryCode = sf.ForceCountryCode
 
 	ddnsProfilesRaw, err := json.Marshal(s.DDNSProfiles)
 	if err != nil {

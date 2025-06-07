@@ -259,23 +259,30 @@ func (s *NezhaHandler) ReportGeoIP(c context.Context, r *pb.GeoIP) (*pb.GeoIP, e
 			"")
 	}
 
-	// 根据内置数据库查询 IP 地理位置
-	var ip string
-	if geoip.IP.IPv6Addr != "" && (use6 || geoip.IP.IPv4Addr == "") {
-		ip = geoip.IP.IPv6Addr
+	// 如果设置了强制国家码，则优先使用强制国家码
+	if server.ForceCountryCode != "" {
+		geoip.CountryCode = server.ForceCountryCode
 	} else {
-		ip = geoip.IP.IPv4Addr
-	}
+		// 根据内置数据库查询 IP 地理位置
+		var ip string
+		if geoip.IP.IPv6Addr != "" && (use6 || geoip.IP.IPv4Addr == "") {
+			ip = geoip.IP.IPv6Addr
+		} else {
+			ip = geoip.IP.IPv4Addr
+		}
 
-	netIP := net.ParseIP(ip)
-	location, err := geoipx.Lookup(netIP)
-	if err != nil {
-		log.Printf("NEZHA>> geoip.Lookup: %v", err)
+		netIP := net.ParseIP(ip)
+		location, err := geoipx.Lookup(netIP)
+		if err != nil {
+			log.Printf("NEZHA>> geoip.Lookup: %v", err)
+		}
+
+		geoip.CountryCode = location
 	}
-	geoip.CountryCode = location
 
 	// 将地区码写入到 Host
 	server.GeoIP = &geoip
 
-	return &pb.GeoIP{Ip: nil, CountryCode: location, DashboardBootTime: singleton.DashboardBootTime}, nil
+	// 返回给客户端的国家码应该是最终使用的国家码
+	return &pb.GeoIP{Ip: nil, CountryCode: geoip.CountryCode, DashboardBootTime: singleton.DashboardBootTime}, nil
 }
