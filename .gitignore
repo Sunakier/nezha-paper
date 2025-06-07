@@ -17,7 +17,9 @@
 .DS_Store
 /cmd/dashboard/data
 /cmd/dashboard/main
-/cmd/dashboard/*-dist
+/cmd/dashboard/*-dist/*
+!/cmd/dashboard/nezha-dash-paper-dist/.gitkeep
+!/cmd/dashboard/admin-frontend-paper-dist/.gitkeep
 /config.yml
 /resource/template/theme-custom
 /resource/static/custom
