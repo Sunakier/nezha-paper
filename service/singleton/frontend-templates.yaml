@@ -2,7 +2,7 @@
   name: "admin-frontend-paper"
   repository: "https://github.com/Sunakier/admin-frontend-paper"
   author: "Sunakier"
-  version: "v1.0.0-paper"
+  version: "v1.0.1-paper"
   is_admin: true
   is_official: false
 - path: "nezha-dash-paper-dist"
