@@ -33,9 +33,6 @@ jobs:
       - run: git config --global --add safe.directory /__w/nezha/nezha
 
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          fetch-tags: true
 
       - name: Prepare frontends' dists
         run: |
@@ -55,6 +52,17 @@ jobs:
         run: |
           go install github.com/swaggo/swag/cmd/swag@latest
           swag init --pd -d . -g ./cmd/dashboard/main.go -o ./cmd/dashboard/docs --parseGoList=false
+
+      - name: Debug current working directory
+        run: |
+          pwd
+          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+          ls -la
+          apt update && apt install tree -y
+          tree -L 5
+          git status
+          git rev-parse HEAD || echo "rev-parse failed"
+          git log --oneline -n 5 || echo "log failed"
 
       - name: Build with tag
         if: contains(github.ref, 'refs/tags/')
@@ -132,9 +140,6 @@ jobs:
     name: Release Docker images
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          fetch-tags: true
 
       - name: Download artifacts
         uses: actions/download-artifact@v4
