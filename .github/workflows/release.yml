@@ -33,6 +33,9 @@ jobs:
       - run: git config --global --add safe.directory /__w/nezha/nezha
 
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: Prepare frontends' dists
         run: |
@@ -129,6 +132,9 @@ jobs:
     name: Release Docker images
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: Download artifacts
         uses: actions/download-artifact@v4
