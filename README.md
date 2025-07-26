@@ -1,5 +1,5 @@
 # Nezha-Paper
-一个可能具有魔法的哪吒面板
+一个可能具有魔法的哪吒面板，本项目为个人使用，如遇问题请向上游提交
 
 ## 上游
 
@@ -8,7 +8,7 @@
 ## 魔法改动
 
 - 支持白名单跨域域名, 允许前端全静态，完全前后端分离, 配合我的前端分支使用
-  [https://github.com/Sunakier/nezha-paper](https://github.com/Sunakier/nezha-paper)
+  [https://github.com/Sunakier/nezha-dash-paper](https://github.com/Sunakier/nezha-dash-paper)
 
 ## 配置说明
 
